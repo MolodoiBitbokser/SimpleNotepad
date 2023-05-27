@@ -1,0 +1,15 @@
+C:\Users\gunte\source\repos\Notepad\Notepad\bin\Release\Notepad.exe.config
+C:\Users\gunte\source\repos\Notepad\Notepad\bin\Release\Notepad.exe.manifest
+C:\Users\gunte\source\repos\Notepad\Notepad\bin\Release\Notepad.application
+C:\Users\gunte\source\repos\Notepad\Notepad\bin\Release\Notepad.exe
+C:\Users\gunte\source\repos\Notepad\Notepad\bin\Release\Notepad.pdb
+C:\Users\gunte\source\repos\Notepad\Notepad\obj\Release\Notepad.csproj.AssemblyReference.cache
+C:\Users\gunte\source\repos\Notepad\Notepad\obj\Release\Notepad.csproj.SuggestedBindingRedirects.cache
+C:\Users\gunte\source\repos\Notepad\Notepad\obj\Release\Notepad.Form1.resources
+C:\Users\gunte\source\repos\Notepad\Notepad\obj\Release\Notepad.Properties.Resources.resources
+C:\Users\gunte\source\repos\Notepad\Notepad\obj\Release\Notepad.csproj.GenerateResource.cache
+C:\Users\gunte\source\repos\Notepad\Notepad\obj\Release\Notepad.csproj.CoreCompileInputs.cache
+C:\Users\gunte\source\repos\Notepad\Notepad\obj\Release\Notepad.exe.manifest
+C:\Users\gunte\source\repos\Notepad\Notepad\obj\Release\Notepad.application
+C:\Users\gunte\source\repos\Notepad\Notepad\obj\Release\Notepad.exe
+C:\Users\gunte\source\repos\Notepad\Notepad\obj\Release\Notepad.pdb

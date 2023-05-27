@@ -19,6 +19,7 @@ namespace Notepad
         float fontSize = 0;
         public string filename;
         public bool isFileChanged;
+
         public Form1()
         {
             InitializeComponent();
@@ -116,7 +117,7 @@ namespace Notepad
         {
             if (isFileChanged)
             {
-                DialogResult result = MessageBox.Show("Do you want to save changes to a file?", "Save file", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                DialogResult result = MessageBox.Show("Do you want to save changes to a file?", "Save file", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
                 if (result == DialogResult.Yes)
                 {
                     SaveFile(filename);
@@ -155,7 +156,18 @@ namespace Notepad
 
         private void OnFormClosing(object sender, FormClosingEventArgs e)
         {
-            SaveUnsavedFile();
+            if (isFileChanged)
+            {
+                DialogResult result = MessageBox.Show("Do you want to save changes to a file?", "Save file", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result == DialogResult.Yes)
+                {
+                    SaveFile(filename);
+                }
+                if (result == DialogResult.Cancel)
+                { 
+                    e.Cancel = true;
+                }
+            }
         }
         public void IncreasText()
         {
@@ -186,20 +198,30 @@ namespace Notepad
             DownscaledText();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonSearch(object sender, EventArgs e)
         {
             int index = 0;
             richTextBox1.SelectAll();
             richTextBox1.SelectionBackColor = Color.White;
-            while (index < richTextBox1.Text.LastIndexOf(textBox1.Text))
+            while (index < richTextBox1.Text.LastIndexOf(textBox1.Text)) 
             {
                 richTextBox1.Find(textBox1.Text, index, richTextBox1.TextLength, RichTextBoxFinds.MatchCase);
                 richTextBox1.SelectionBackColor = Color.Yellow;
-                index = richTextBox1.Text.IndexOf(textBox1.Text, index) + 1;
+                index += richTextBox1.Text.IndexOf(textBox1.Text, index);
             }
             if (index == 0)
             {
-                MessageBox.Show("Don't find text");
+                MessageBox.Show("Can't find word " + "'" + textBox1.Text + "'", "Search");
+                textBox1.Text = "";
+                textBox1.Clear();
+            }
+        }
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonSearch(sender, e);
+                e.SuppressKeyPress = true;
             }
         }
     }

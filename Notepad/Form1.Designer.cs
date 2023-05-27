@@ -39,7 +39,6 @@
             this.copeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.increaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +60,7 @@
             this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(782, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(782, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -73,7 +72,7 @@
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newToolStripMenuItem
@@ -114,10 +113,9 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.copeToolStripMenuItem,
             this.pasteToolStripMenuItem,
-            this.cutToolStripMenuItem,
-            this.findToolStripMenuItem});
+            this.cutToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // copeToolStripMenuItem
@@ -144,18 +142,12 @@
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.OnCutClick);
             // 
-            // findToolStripMenuItem
-            // 
-            this.findToolStripMenuItem.Name = "findToolStripMenuItem";
-            this.findToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.findToolStripMenuItem.Text = "Find";
-            // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sizeToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // sizeToolStripMenuItem
@@ -190,6 +182,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(114, 25);
             this.textBox1.TabIndex = 1;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // openFileDialog1
             // 
@@ -197,10 +190,11 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 28);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 30);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(782, 525);
+            this.richTextBox1.Size = new System.Drawing.Size(782, 523);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -213,7 +207,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Search";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.buttonSearch);
             // 
             // Form1
             // 
@@ -255,7 +249,6 @@
         private System.Windows.Forms.ToolStripMenuItem sizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem increaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem downscaleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button1;
     }
